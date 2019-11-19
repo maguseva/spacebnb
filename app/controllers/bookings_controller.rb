@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:destroy]
+  before_action :set_booking, only: [:destroy, :success]
 
   def new
     @planet = Planet.find(params[:planet_id])
@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
     @booking.planet = Planet.find(params[:planet_id])
     @booking.user = current_user
     if @booking.save
-      redirect_to success_path
+      redirect_to successfull_booking_path(@booking)
     else
       render :new
     end
@@ -23,10 +23,13 @@ class BookingsController < ApplicationController
     redirect_to home_path
   end
 
+  def success
+  end
+
   private
 
   def set_booking
-    Booking.find(params[:id])
+    @booking = Booking.find(params[:id])
   end
 
   def booking_params
