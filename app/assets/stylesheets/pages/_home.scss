@@ -76,3 +76,45 @@
 .container {
   height: 40vh;
 }
+
+.card {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10%;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0 10px;
+  position: relative;
+}
+
+.btn {
+  background-color: grey;
+  border: 1px solid grey;
+  margin: 10px;
+}
+
+h1 {
+  text-align: center;
+  margin: 5%;
+  font-weight: bold;
+  font-family: "Tomorrow";
+}
+
+h5 {
+  font-family: "Tomorrow";
+}
+
+p {
+  font-family: "Tomorrow";
+}
