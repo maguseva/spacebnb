@@ -1,17 +1,18 @@
-<h1>Adventure in Space</h1>
+<h1 id="list-page">Adventure in Space</h1>
 
 <div class="container">
   <div class="row">
     <% @planets.each do |planet| %>
-      <div class="col-md-6 col-lg-4">
-        <div class="card" >
-          <img src="<%= planet.photo %>" class="card-img-top" alt="..." style="background-image">
-          <div class="card-body">
-            <h5 class="card-title"><%= planet.name %></h5>
-            <p class="card-title"><%= planet.price %> €</p>
+      <div class="col-md-6 col-lg-4" id="planet-card">
+        <%= link_to planet_path(planet) do %>
+          <div class="card" >
+            <img src="<%= planet.photo %>" class="card-img-top" alt="..." style="background-image">
+            <div class="card-body">
+              <h5 class="card-title"><%= planet.name %></h5>
+              <p class="card-title"><%= planet.price %> €</p>
+            </div>
           </div>
-          <p><%= link_to "View Planet", '', class: "btn btn-danger" %></p>
-        </div>
+        <% end %>
       </div>
     <% end %>
   </div>
