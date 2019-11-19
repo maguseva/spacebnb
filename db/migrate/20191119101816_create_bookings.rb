@@ -1,8 +1,8 @@
 class CreateBookings < ActiveRecord::Migration[5.2]
   def change
     create_table :bookings do |t|
-      t.string :status
-      t.integer :guests
+      t.string :status, default: "pending"
+      t.integer :guests, default: 1
       t.string :start_date
       t.string :end_date
       t.references :planet, foreign_key: true

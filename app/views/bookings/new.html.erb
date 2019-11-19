@@ -1,0 +1,5 @@
+<!-- <h1>Create a new booking for <%= @planet.name %></h1> -->
+
+<%= render 'form', planet: @planet, booking: @booking %>
+
+<%= link_to 'Back', planet_path(@planet), class: "btn btn-secondary mt-4"%>
