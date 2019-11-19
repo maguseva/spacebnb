@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'planets/index'
-  get 'planets/show'
+  # get 'planets/index'
+  # get 'planets/show'
   devise_for :users
   root to: 'pages#home'
   resources :planets, only: [:index, :show] do
