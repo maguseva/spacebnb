@@ -83,6 +83,12 @@
   margin-bottom: 10%;
   text-align: center;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  color: black;
+}
+
+.card:hover {
+  font-weight: bold;
+  border: 1px solid black;
 }
 
 .card-img-top {
@@ -98,11 +104,16 @@
   position: relative;
 }
 
-.btn {
-  background-color: grey;
-  border: 1px solid grey;
-  margin: 10px;
+// .btn {
+//   background-color: grey;
+//   border: 1px solid grey;
+//   margin: 10px;
+// }
+
+#planet-card a:hover {
+  text-decoration: none;
 }
+
 
 h1 {
   text-align: center;
@@ -111,10 +122,10 @@ h1 {
   font-family: "Tomorrow";
 }
 
-h5 {
+.card-body h5 {
   font-family: "Tomorrow";
 }
 
-p {
+.card-body p {
   font-family: "Tomorrow";
 }
