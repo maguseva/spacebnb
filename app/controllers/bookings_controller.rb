@@ -11,6 +11,8 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.planet = Planet.find(params[:planet_id])
     @booking.user = current_user
+    @booking.start_date = Date.parse(@booking.start_date.split(' ')[0]).strftime("%B %e, %Y")
+    confirm_booking(@booking)
     if @booking.save
       redirect_to successfull_booking_path(@booking)
     else
@@ -27,6 +29,10 @@ class BookingsController < ApplicationController
   end
 
   private
+
+  def confirm_booking(booking)
+    booking.status = "confirmed"
+  end
 
   def set_booking
     @booking = Booking.find(params[:id])
