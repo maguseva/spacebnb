@@ -6,7 +6,10 @@ class PlanetsController < ApplicationController
     @planets = policy_scope(Planet)
   end
 
-  def show; end
+  def show
+    @planet = Planet.find(params[:id])
+    @booking = Booking.new
+  end
 
   private
 
