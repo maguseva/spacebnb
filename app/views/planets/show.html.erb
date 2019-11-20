@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container col-sm-6 col-md-8 col-lg-10" >
   <div class="row">
     <div class="col-12">
       <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @planet.photo %>);">
@@ -12,21 +12,24 @@
       <div class="d-flex capacity-travel-box">
         <div id="capacity">
           <h4>👫 Capacity</h4>
-          <p>Your travel time is 3 hours</p>
+          <p> <%= @planet.name %> offers space for <strong><%= @planet.capacity %> persons</strong>.</p>
         </div>
         <div id="travel-time">
           <h4>⏳ Travel time</h4>
-          <p>Your total space travel time is 6 months</p>
+          <p>It takes 6 years with <strong>Virgin Galactic</strong>.</p>
+          <p>It takes 3 years with <strong>Space X</strong>.</p>
         </div>
       </div>
       <h3>Description</h3>
       <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
     </div>
     <div class="col-6">
-      <p>Daily price: <%= @planet.price%>€</p>
-      <%= link_to 'BOOK IT!', new_planet_booking_path(@planet), class: "btn btn-primary" %>
+      <div id="price">
+        <h4><%= @planet.price%>€ per Night</h4>
+      </div>
+      <div id="booking-form">
+        <%= render 'form', restaurant: @planet, booking: @booking %>
+      </div>
     </div>
   </div>
 </div>
-
-

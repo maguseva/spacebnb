@@ -6,7 +6,10 @@ class PlanetsController < ApplicationController
     @planets = Planet.all
   end
 
-  def show; end
+  def show
+    @planet = Planet.find(params[:id])
+    @booking = Booking.new
+  end
 
   private
 
