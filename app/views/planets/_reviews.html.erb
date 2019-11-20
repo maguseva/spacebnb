@@ -1,0 +1,14 @@
+<!-- _reviews.html.erb -->
+<h3>Reviews</h3>
+<div class="col-12">
+  <%@reviews.each do |review| %>
+  <li class="review-item">
+    <div>
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier"
+      <p><strong>Date: </strong><%= @review.created_at%></p>
+      <p><strong>Stars: </strong> <%= @review.stars %></p>
+      <p><strong>Content: </strong><%= @review.content %></p>
+    </div>
+  </li>
+  <% end %>
+</div>
