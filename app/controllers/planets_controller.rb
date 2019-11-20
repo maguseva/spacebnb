@@ -1,11 +1,15 @@
 class PlanetsController < ApplicationController
   before_action :set_planet, only: :show
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @planets = Planet.all
   end
 
-  def show; end
+  def show
+    @planet = Planet.find(params[:id])
+    @booking = Booking.new
+  end
 
   private
 
