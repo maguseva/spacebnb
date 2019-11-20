@@ -33,6 +33,7 @@
   height: 100px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
+  width: 100vw;
 }
 .footer-links {
   display: flex;
@@ -49,13 +50,18 @@
   opacity: 1;
 }
 .footer .fa-heart {
-  color: #D23333;
+  color: $red;
+}
+
+.fab {
+  color: $red;
 }
 
 .banner {
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  margin-bottom: 70px;
 }
 
 .banner h1 {
@@ -74,7 +80,6 @@
 }
 
 .container {
-  height: 40vh;
 }
 
 .card {
@@ -88,7 +93,7 @@
 
 .card:hover {
   font-weight: bold;
-  border: 1px solid black;
+  border: 1px solid grey;
 }
 
 .card-img-top {
@@ -129,3 +134,4 @@ h1 {
 .card-body p {
   font-family: "Tomorrow";
 }
+
