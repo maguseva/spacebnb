@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :planets, only: [:index, :show] do
     resources :bookings, only: [:new, :create]
-      resources :reviews, only: [:new, :create]
+      resources :reviews, only: [:index, :new, :create]
   end
   resources :reviews, only: [:destroy]
   resources :bookings, only: [:index, :destroy]
