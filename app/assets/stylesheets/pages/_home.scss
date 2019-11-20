@@ -59,9 +59,13 @@
 
 .banner {
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   padding: 150px 0;
   margin-bottom: 70px;
+}
+
+#home-banner {
+  margin-bottom: 0;
 }
 
 .banner h1 {
