@@ -11,6 +11,6 @@ Rails.application.routes.draw do
 
   get 'bookings/:id/success', to: 'bookings#success', as: :successfull_booking
 
-  root to: 'planets#index'
+  root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
