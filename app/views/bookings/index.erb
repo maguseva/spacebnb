@@ -1,0 +1,37 @@
+<!-- index.html.erb -->
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <% if @bookings.empty? %>
+        <h1>You don't have any bookings yet</h1>
+        <div class="btn-center">
+          <%= link_to 'Start spacing', planets_path, class: "btn btn-danger" %>
+        </div>
+      <% else %>
+        <h1>Your bookings</h1>
+        <ul style="list-style-type: none;">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <%@bookings.each do |booking| %>
+                <li class="booking-item">
+                  <div>
+                    <p><strong>Planet:</strong> <%= booking.planet.name %></p>
+                    <p><strong>Dates: </strong><%= booking.start_date%> - <%= booking.end_date %></p>
+                    <p><strong>Number of guests: </strong><%= booking.guests %></p>
+                  </div>
+                  <div>
+                    <%= link_to 'Cancel your booking', booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel your booking for #{booking.planet.name}?" }, class: "btn btn-danger" %>
+                    <%= link_to 'Add a review', '#', class: "btn btn-danger" %>
+                  </div>
+                </li>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
+
