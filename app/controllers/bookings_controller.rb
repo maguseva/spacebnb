@@ -1,11 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:destroy, :success]
 
-  def new
-    @planet = Planet.find(params[:planet_id])
-    @booking = Booking.new
-    @booking.planet = @planet
-  end
+  def new; end
 
   def create
     @booking = Booking.new(booking_params)
