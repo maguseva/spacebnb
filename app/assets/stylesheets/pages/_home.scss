@@ -127,3 +127,17 @@ h1 {
 .card-body p {
   font-family: "Tomorrow";
 }
+
+.booking-item {
+  border: 1px solid #F4F4F4;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.btn-center {
+  text-align: center;
+}
