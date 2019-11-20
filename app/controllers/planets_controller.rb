@@ -3,7 +3,7 @@ class PlanetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @planets = Planet.all
+    @planets = policy_scope(Planet)
   end
 
   def show
@@ -15,5 +15,6 @@ class PlanetsController < ApplicationController
 
   def set_planet
     @planet = Planet.find(params[:id])
+    authorize @planet
   end
 end
