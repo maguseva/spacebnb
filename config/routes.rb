@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :planets, only: [:index, :show] do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:new, :create] do
       resources :reviews, only: [:index, :new, :create]
+    end
   end
   resources :reviews, only: [:destroy]
   resources :bookings, only: [:index, :destroy]
