@@ -5,9 +5,13 @@
       <%= simple_form_for [@booking, @review] do |f| %>
         <%= f.input :content %>
         <%= f.input :stars, collection: 1..5 %>
-        <%= f.submit "Add review", class: "btn btn-danger btn-center" %>
+        <div class="btn-center">
+          <p><%= f.submit "Add review", class: "btn btn-danger btn-center" %></p>
+        </div>
       <% end %>
-      <p><%= link_to "Back to your Bookings", bookings_path, class: "btn btn-danger btn-center" %></p>
+      <div class="btn-center">
+        <p><%= link_to "Back to your Bookings", bookings_path, class: "btn btn-danger btn-center" %></p>
+      </div>
     </div>
   </div>
 </div>
