@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:destroy, :success]
-  skip_before_action :authenticate_user!, only: [:success, :destroy]
 
   def new
     @planet = Planet.find(params[:planet_id])
