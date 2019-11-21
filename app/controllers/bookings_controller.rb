@@ -1,6 +1,5 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:destroy, :success]
-  skip_before_action :authenticate_user!, only: [:index, :success, :destroy]
 
   def new
     @planet = Planet.find(params[:planet_id])
@@ -14,13 +13,15 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.planet = Planet.find(params[:planet_id])
     @booking.user = current_user
-    @booking.start_date = Date.parse(@booking.start_date.split(' ')[0]).strftime("%B %e, %Y")
-    @booking.total_price = (Date.parse(@booking.end_date) - Date.parse(@booking.start_date)).to_i * @booking.planet.price.to_i
-    confirm_booking(@booking)
     if @booking.save
+      confirm_booking(@booking)
+      @booking.update(start_date: Date.parse(@booking.start_date.split(' ')[0]).strftime("%B %e, %Y"))
+      @booking.update(total_price:
+        (Date.parse(@booking.end_date) - Date.parse(@booking.start_date)).to_i * @booking.planet.price.to_i)
       redirect_to successfull_booking_path(@booking)
     else
-      render :new
+      @planet = @booking.planet
+      render 'planets/show'
     end
   end
 
@@ -39,6 +40,7 @@ class BookingsController < ApplicationController
 
   def confirm_booking(booking)
     booking.status = "confirmed"
+    booking.save
   end
 
   def set_booking
