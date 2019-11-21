@@ -3,7 +3,13 @@ class PlanetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @planets = policy_scope(Planet)
+    @planets = policy_scope(Planet).geocoded
+    @markers = @flats.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def show

@@ -1,4 +1,13 @@
 <h1 id="list-page">Adventure in Space</h1>
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
+
 <div class="container">
   <div class="row">
     <% @planets.each do |planet| %>
