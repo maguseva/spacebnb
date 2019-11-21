@@ -1,9 +1,13 @@
 <div class="container">
-  <h1><%= @booking.planet.name %></h1>
-  <%= simple_form_for [@booking, @review] do |f| %>
-    <%= f.input :content %>
-    <%= f.input :stars, collection: 1..5 %>
-    <%= f.submit "Add review", class: "btn btn-danger" %>
-  <% end %>
-  <p><%= link_to "Back to your Bookings", bookings_path %></p>
+  <div class="row">
+    <div class="col-8 col-md-6 col-sm-8 offset-3">
+      <h1>Add a review for <%= @booking.planet.name %></h1>
+      <%= simple_form_for [@booking, @review] do |f| %>
+        <%= f.input :content %>
+        <%= f.input :stars, collection: 1..5 %>
+        <%= f.submit "Add review", class: "btn btn-danger btn-center" %>
+      <% end %>
+      <p><%= link_to "Back to your Bookings", bookings_path, class: "btn btn-danger btn-center" %></p>
+    </div>
+  </div>
 </div>
