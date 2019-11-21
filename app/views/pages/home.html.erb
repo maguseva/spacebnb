@@ -1,10 +1,9 @@
-<!-- <h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p> -->
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1571769267292-e24dfadebbdc?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9);">
+<div class="banner" id= "home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1571769267292-e24dfadebbdc?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9);">
   <div class="container">
     <div class="row justify-content-between">
       <div class="col-4">
         <h1>SpaceBnB is the leading space travel agency!</h1>
+        <br>
         <p>Change your life and book your next holiday in space on one of our allied planets.</p>
       </div>
       <div class="col-4" id="form">
@@ -21,7 +20,10 @@
             <label for="date">Check-Out</label>
             <input type="date" id="date" class="form-control">
           </div>
-            <input type="submit" value="Search" class="btn btn-danger">
+          <div class="btn-center">
+            <input type="#" value="Search" class="btn btn-danger">
+            <%= link_to "View all planets", planets_path, class: "btn btn-danger", style: "margin-top: 20px;" %>
+          </div>
         </form>
       </div>
     </div>
