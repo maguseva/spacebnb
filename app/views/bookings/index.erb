@@ -16,14 +16,25 @@
               <%@bookings.each do |booking| %>
                 <li class="booking-item">
                   <div>
-                    <p><strong>Planet:</strong> <%= booking.planet.name %></p>
+                    <p id="planet-title"><strong>Planet: </strong><%= link_to booking.planet.name, planet_path(booking.planet) %></p>
                     <p><strong>Dates: </strong><%= booking.start_date%> - <%= booking.end_date %></p>
                     <p><strong>Number of guests: </strong><%= booking.guests %></p>
-                    <p><strong>Total price: </strong><%= booking.total_price %> euro</p>
+                    <p><strong>Total price: </strong><%= booking.total_price %> €</p>
+                    <br>
                   </div>
-                  <div>
+                  <div class="btn-bottom">
+                    <div>
+                      <% if booking.review %>
+                        <p><% booking.review.stars.times do %>
+                          ⭐️
+                        <% end %></p>
+                        <p><strong><%= booking.review.content %></strong>
+                        <%= link_to "✗", review_path(booking.review), method: :delete, data: { confirm: 'Are you sure?' }, class: "text-danger" %></p>
+                      <% else %>
+                        <%= link_to 'Add a review', new_booking_review_path(booking), class: "btn btn-danger" %>
+                      <% end %>
+                    </div>
                     <%= link_to 'Cancel your booking', booking_path(booking), method: :delete, data: { confirm: "Are you sure you want to cancel your booking for #{booking.planet.name}?" }, class: "btn btn-danger" %>
-                    <%= link_to 'Add a review', '#', class: "btn btn-danger" %>
                   </div>
                 </li>
               <% end %>

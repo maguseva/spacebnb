@@ -1,2 +1,29 @@
 <!-- _reviews.html.erb -->
-<h3>Reviews</h3>
+<div>
+  <% if @bookings.empty? %>
+  <h1></h1>
+  <% else %>
+  <h3>Reviews</h3>
+    <br>
+  <div class="review-box">
+    <ul style="list-style-type: none;" class="review-box">
+      <div class="row">
+        <% @bookings.each do |booking| %>
+        <div class="col-12" >
+          <li class="review-item">
+            <div>
+              <h5><%= booking.user.email%></h5>
+              <p><%booking.review.stars.times do%>
+               ⭐️
+               <% end %>
+             </p>
+             <p><em><%= booking.review.content %></em></p>
+           </div>
+         </li>
+       </div>
+       <%end %>
+     </div>
+   </ul>
+ </div>
+  <% end %>
+</div>
