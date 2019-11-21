@@ -12,4 +12,8 @@ class ReviewPolicy < ApplicationPolicy
   def create?
     return true
   end
+
+  def destroy?
+    record.booking.user == user
+  end
 end
