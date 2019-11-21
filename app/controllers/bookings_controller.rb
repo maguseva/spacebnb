@@ -22,7 +22,6 @@ class BookingsController < ApplicationController
     else
       @planet = @booking.planet
       render 'planets/show'
-
     end
   end
 
