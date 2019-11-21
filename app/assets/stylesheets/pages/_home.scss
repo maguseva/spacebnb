@@ -142,10 +142,25 @@ h1 {
   background-color: white;
 }
 
+#planet-title a {
+  color: $red;
+  font-weight: bold;
+}
+
+.booking-item a {
+  text-decoration: none;
+}
+
+#planet-title a:hover {
+  color: grey;
+}
+
 .btn-center {
   text-align: center;
 }
 
 .btn-bottom {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
