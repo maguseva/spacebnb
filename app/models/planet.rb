@@ -6,7 +6,7 @@ class Planet < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :price, presence: true
   validates :capacity, presence: true
-
+  validates :address, presence: true
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   # todo check if we handle empty photo
