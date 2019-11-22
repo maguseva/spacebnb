@@ -15,6 +15,7 @@ class PlanetsController < ApplicationController
   def show
     @planet = Planet.find(params[:id])
     @booking = Booking.new
+    @bookings = @planet.bookings.includes(:review, :user).select(&:review)
   end
 
   private
