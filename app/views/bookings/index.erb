@@ -28,7 +28,7 @@
                         <p><% booking.review.stars.times do %>
                           ⭐️
                         <% end %></p>
-                        <p><strong><%= booking.review.content %></strong>
+                        <p><i><%= booking.review.content %></i>
                         <%= link_to "✗", review_path(booking.review), method: :delete, data: { confirm: 'Are you sure?' }, class: "text-danger" %></p>
                       <% else %>
                         <%= link_to 'Add a review', new_booking_review_path(booking), class: "btn btn-danger" %>
