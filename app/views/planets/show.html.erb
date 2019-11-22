@@ -11,7 +11,7 @@
       <br>
       <div class="d-flex capacity-travel-box">
         <div id="capacity">
-          <h4>👫 Capacity</h4>
+          <h4>👩🏼‍🚀👨🏼‍🚀 Capacity</h4>
           <p> <%= @planet.name %> offers space for <strong><%= @planet.capacity %> persons</strong>.</p>
         </div>
         <div id="travel-time">
@@ -21,7 +21,7 @@
         </div>
       </div>
       <h3 id="description">Description</h3>
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+      <p><%= @planet.description %></p>
       <div id="reviews">
         <%= render 'planets/reviews', planet: @planet, booking: @booking %>
       </div>

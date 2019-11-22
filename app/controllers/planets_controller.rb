@@ -4,6 +4,11 @@ class PlanetsController < ApplicationController
 
   def index
     @planets = policy_scope(Planet).geocoded
+    if params[:query].present?
+      @planets = Planet.search_by_name(params[:query])
+    else
+      @planets = Planet.all
+    end
     @markers = @planets.map do |planet|
       {
         lat: planet.latitude,
