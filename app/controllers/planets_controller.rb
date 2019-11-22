@@ -4,10 +4,12 @@ class PlanetsController < ApplicationController
 
   def index
     @planets = policy_scope(Planet).geocoded
-    @markers = @flats.map do |flat|
+    @markers = @planets.map do |planet|
       {
-        lat: flat.latitude,
-        lng: flat.longitude
+        lat: planet.latitude,
+        lng: planet.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { planet: planet }),
+        imageUrl: helpers.asset_url('rocket_red.png')
       }
     end
   end
