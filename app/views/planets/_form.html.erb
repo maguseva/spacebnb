@@ -9,6 +9,8 @@
     <%= f.input :guests, :label => "Number of guests", :collection => (1..@planet.capacity), :selected => 1 %>
   </div>
 
+  <div id="total-cost"></div>
+
   <div class="form-actions btn-center">
     <%= f.submit "Book", class: "btn btn-danger btn-block test" %>
   </div>

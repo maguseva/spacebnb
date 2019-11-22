@@ -21,6 +21,7 @@ class BookingsController < ApplicationController
       redirect_to successfull_booking_path(@booking)
     else
       @planet = @booking.planet
+      @bookings = @planet.bookings.includes(:review, :user).select(&:review)
       render 'planets/show'
     end
   end

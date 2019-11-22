@@ -35,13 +35,14 @@
 
 .banner {
   background-size: cover;
-  background-position: bottom;
+  background-position: center;
   padding: 150px 0;
   margin-bottom: 70px;
 }
 
 #home-banner {
   margin-bottom: 0;
+  background-position: bottom;
 }
 
 .banner h1 {
