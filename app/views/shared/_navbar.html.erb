@@ -11,19 +11,6 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-
-      <li class="nav-item">
-        <%= form_tag planets_path, method: :get do %>
-        <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-          placeholder: "Search"
-          %>
-          <br>
-          <%= submit_tag "Search", class: "btn btn-danger btn-block" %>
-          <% end %>
-        </li>
-
         <li class="nav-item">
           <%= link_to "All planets", planets_path, class: "nav-link" %>
         </li>
