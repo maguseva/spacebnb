@@ -4,3 +4,17 @@
   right: 16px;
   z-index: 1000;
 }
+
+// flash animation for total price
+.flash {
+  animation: blinker .5s linear;
+  color: #FF4F19;
+  margin-bottom: 0;
+}
+
+
+@keyframes blinker {
+  100% {
+    opacity: 0;
+  }
+}
