@@ -7,24 +7,17 @@
         <p>Change your life and book your next holiday in space on one of our allied planets.</p>
       </div>
       <div class="col-4" id="form">
-        <form action="#">
-          <div class="form-group">
-            <label for="location">Location</label>
-            <input type="text" id="location" class="form-control" placeholder="Mars">
-          </div>
-          <div class="form-group">
-            <label for="date">Check-In</label>
-            <input type="date" id="date" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="date">Check-Out</label>
-            <input type="date" id="date" class="form-control">
-          </div>
-          <div class="btn-center">
-            <input type="#" value="Search" class="btn btn-danger">
-          </div>
-        </form>
+        <h2 id="search-title" align="center"><strong>Start your trip! 🔭</strong></h2>
+        <%= form_tag planets_path, method: :get do %>
+        <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+          placeholder: "Search your rocket launch site"
+          %>
+          <br>
+          <%= submit_tag "Search", class: "btn btn-danger btn-block" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
