@@ -43,7 +43,7 @@
 #home-banner {
   margin-bottom: 0;
   background-position: bottom;
-  height: 550px;
+  height: 600px;
 }
 
 .banner h1 {
@@ -138,4 +138,8 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+#map-title {
+  color: $red;
 }

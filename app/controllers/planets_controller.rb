@@ -9,7 +9,8 @@ class PlanetsController < ApplicationController
     else
       @planets = Planet.all
     end
-    @markers = @planets.map do |planet|
+
+    @markers = @planets.uniq(&:address).map do |planet|
       {
         lat: planet.latitude,
         lng: planet.longitude,
